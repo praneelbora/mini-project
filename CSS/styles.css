@@ -1,0 +1,44 @@
+#plane {
+    position: absolute;
+width: 350px;
+height: 292.53px;
+left: 823px;
+top: 374.12px;
+
+transform: rotate(-50deg);
+}
+
+#cloud1 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 1203.21px;
+    top: 441px;
+    transform: rotate(35deg);
+}
+
+#cloud2
+{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 1289.28px;
+    top: 483px;
+    transform: rotate(50deg);
+}
+#cloud3 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 1439.94px;
+    top: 575px;
+    transform: rotate(70deg);
+}
+#cloud4 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 1522px;
+    top: 550px;
+    transform: rotate(30deg);
+}
