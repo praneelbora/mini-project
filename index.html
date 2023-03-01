@@ -8,9 +8,39 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="Assets/Airplane.png" alt="Airplane.png" id="plane">
-    <img src="Assets/Cloud.png" alt="Cloud1.png" id="cloud1">
-    <img src="Assets/Cloud.png" alt="Cloud2.png" id="cloud2">
-    <img src="Assets/Cloud.png" alt="Cloud3.png" id="cloud3">
-    <img src="Assets/Cloud.png" alt="Cloud4.png" id="cloud4">
+    
+    <nav class="navbar" id="navbar">
+        <img class="logo"src="Assets/logo.png" alt="Logo">
+        <ul style="list-style-type: none;" >
+            <li class="nav1 nav2" style="color: white; ">Browse</li>
+            <li class="nav1 nav2" style="color: white; ">About Us</li>
+            <li class="nav1 nav2" style="color: white; ">Contact</li>
+            <li class="nav1" ><span class="nav3">Log In</span> | <span class="nav3">Sign Up</span> </li>
+            <li></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <!-- <div class="el1"></div> -->
+        <div class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolore adipisci ullam sequi aperiam perferendis quas, quaerat aspernatur architecto, molestias numquam cum perspiciatis esse excepturi vitae aliquid odio doloribus nihil.</div>
+        <img class="el1" src="Assets/Ellipse 1.png" alt="Ellipse1">
+        <img class="el2" src="Assets/Ellipse 2.png" alt="Ellipse2">
+        <img class="el3" src="Assets/Ellipse 3.png" alt="Ellipse3">
+    </section>
+    <section class="search">
+        <input class="searchbar" type="text" placeholder="Hotels, Places, Landmarks etc">
+    </section>
+    <script>
+        var nav = document.getElementById('navbar');
+        window.onscroll = function () {
+            if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50){
+                nav.classList.add('navbarbg');
+            } else {
+                nav.classList.remove('navbarbg');
+            }
+        }
+        // function pageScroll() {
+        // window.scrollBy(0,1);
+        // scrolldelay = setTimeout(pageScroll,10);
+        // }
+    </script>
 </body>
