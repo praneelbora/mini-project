@@ -10,44 +10,44 @@
     <link rel="stylesheet" href="CSS/signup.css">
 </head>
 <body>
-    <img class="logo"src="Assets/logo.png" alt="Logo">
-
-    <div class="col-8 box">
-        <div class = "inner">
+    <div class="primary-box">
+        <div class="form">
+            <h2>Sign Up</h2>
+            <br>
             <form> 
                 <!-- FULL NAME -->
                 <div class="form-floating mb-3">
-                    <input type="name" class="form-control" id="name" placeholder="John Wick" style=" width: 50%;" required>
+                    <input type="name" class="form-control" id="name" placeholder="John Wick" required>
                     <label for="name">Full Name</label>
                 </div>
                 <!-- PHONE NUMBER  -->
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="username" placeholder="johnwick" style=" width: 50%;" required>
+                    <input type="text" class="form-control" id="username" placeholder="johnwick" required>
                     <label for="username">Username</label>
                 </div>
                 <!-- EMAIL ID -->
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com" style=" width: 50%;" required>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
                     <label for="email">Email address</label>
                 </div>
                 <!-- PASSWORD  -->
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="pass" placeholder="Password" style="width: 50%; " required>
+                    <input type="password" class="form-control" id="pass" placeholder="Password" required>
                     <label for="pass">Password</label>
                 </div>
                 <!-- CONFIRM PASSWORD -->
                 <div class="form-floating mb-3">
-                    <input type="confirmpassword" class="form-control" id="confirmpass" placeholder="Password" style="width: 50%; " required>
+                    <input type="confirmpassword" class="form-control" id="confirmpass" placeholder="Password" required>
                     <label for="confirmpass">Confirm Password</label>
                 </div>
                 <!-- DOB  -->
                 <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="bdate" placeholder="date" style="width: 50%;" required>
+                    <input type="date" class="form-control" id="bdate" placeholder="date"  required>
                     <label for="bdate">Date of Birth</label>
                 </div>
                 <!-- GENDER  -->
-                <div class="form-floating">
-                    <select class="form-select" id="gender" aria-label="Floating label select example"  style="width: 50%;">
+                <div class="form-floating mb-4">
+                    <select class="form-select" id="gender" aria-label="Floating label select example"  >
                         <option selected>Please select your gender</option>
                         <option value="1">Male</option>
                         <option value="2">Female</option>
@@ -57,20 +57,20 @@
                 </div>
                 
                 <!-- SIGN UP -->
-                <div class="row g-0 text-center" style="padding-top: 2%;">
-                    <div class="col-sm-4 col-md-6">
-                        <div>          
-                            <input class="btn btn-primary" type="submit" value="Sign Up">
+                
+                        <div style="text-align: center;">          
+                            <input class="btn btn-primary mb-1" type="submit" value="Sign Up">
                         </div>
-                    </div>
-                </div>
+                
                 <a class="old" href="Login.html">Have an account? Sign In here</a>
                 <!-- <p class="old"></p> -->
         
             </form>
 
         </div>
-        
+    </div>
+    <div class="secondary-box">
+        <img class="logo"src="Assets/logo.png" alt="Logo">
     </div>
 </body>
 </html>

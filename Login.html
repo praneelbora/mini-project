@@ -13,36 +13,44 @@
     <link rel="stylesheet" href="CSS/login.css">
 </head>
 <body>
-    <img class="logo"src="Assets/logo.png" alt="Logo">
 
-    <div class="col-8 box">
-        <h2 style="padding-bottom: 0%;">Log In</h2>
+    <span class="primary-box">
+        <div class="form">
+            <h2>Log In</h2>
         <div class = "inner">
             <!-- USERNAME -->
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="username" placeholder="johnwick" style=" width: 50%;" required>
+                <input type="text" class="form-control" id="username" placeholder="johnwick" required>
                 <label for="username">Username</label>
             </div>
 
             <!-- PASSWORD  -->
             <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="pass" placeholder="Password" style="width: 50%; " required>
+                <input type="password" class="form-control" id="pass" placeholder="Password" required>
                 <label for="pass">Password</label>
             </div>
             <!-- FORGOT PASSWORD  -->
             <p class="forgot">Forgot Pasword?</p>
 
             <!-- LOGIN BUTTON  -->
-            <div class="row g-0 text-center" style="padding-top: 2%;">
-                <div class="col-sm-4 col-md-6">
-                    <div>          
-                        <input class="btn btn-primary" type="submit" value="Log In">
-                    </div>
+                <div style="text-align: center;">
+                    <input class="btn btn-primary mb-3" type="submit" value="Log In">
                 </div>
-            </div>
-            <!-- SIGNUP BUTTON  -->
-            <p class=""><a class="old" href="SignUp.html">New? Sign Up here</a></p>
+
+                <!-- SIGNUP BUTTON  -->
+            <p class="old"><a href="SignUp.html">New? Sign Up here</a></p>
         </div>
+
+        </div>
+    </span>
+ 
+
+        
+    <span class="secondary-box">
+        <img class="logo"src="Assets/logo.png" alt="Logo">
+
+    </span>
+        
         
     </div>
 </body>
