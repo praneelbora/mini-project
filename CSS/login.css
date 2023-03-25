@@ -1,0 +1,34 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: #5DCA8F;
+}
+.box{
+    background-color: white;
+    height: 100vh;
+    /* sadaewfadawda???? */
+    padding-left: 22%;
+    padding-top: 15%;
+}
+.inner{
+    margin-top: 10vh;
+}
+.forgot{margin: 0%;padding: 0%; font-size: x-small; text-align: right; padding-right: 51%; color: darkblue;}
+.old{margin: 0%;padding: 0%; font-size: x-small; margin-left: 18%; padding-top: 1%; color: darkblue;}
+.logo{
+    height: 12vh;
+    top: 0.3%;
+    width: auto;
+    margin-left: 1.5%;
+    transition: 0.4s;
+    position: absolute;
+    
+}
+.logo:hover{
+    height: 12.5vh;
+    /* top:0.4%; */
+    width: auto;
+    margin-left: 1.3%;
+}

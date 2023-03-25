@@ -1,0 +1,39 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.primary-box{
+    background-color: white;
+    height: 100vh;
+    padding-left: 22vw;
+    padding-top: 15vh;
+    position: absolute;
+    width: 66vw;
+}
+.secondary-box{
+    position: absolute;
+    height: 100vh;
+    background-color: #5DCA8F;
+    width: 34vw;
+    margin-left: 66vw;
+}
+.inner{
+    margin-top: 10vh;
+}
+.forgot{ font-size: x-small; text-align: right; color: darkblue;}
+.old{ font-size: x-small; text-align: center; color: darkblue;}
+.logo{
+    margin-top: 50%;
+    width: 70%;
+    margin-left: 15%;
+    transition: 0.4s;
+}
+.logo:hover{
+    margin-left: 13%;
+    width: 74%;
+}
+.form{
+    width: 50%;    
+}

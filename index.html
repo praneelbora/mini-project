@@ -8,27 +8,40 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- NAVBAR  -->
     <nav class="navbar" id="navbar">
         <img class="logo"src="Assets/logo.png" alt="Logo">
         <ul style="list-style-type: none;" >
-            <li class="nav1 nav2" style="color: white; ">Browse</li>
+            <li class="nav1 nav2" style="color: white; "><a href="#browse" style="color: inherit; font-style: normal; text-decoration: none;">Browse</a></li>
             <li class="nav1 nav2" style="color: white; ">About Us</li>
             <li class="nav1 nav2" style="color: white; ">Contact</li>
-            <li class="nav1" ><span class="nav3">Log In</span> | <span class="nav3">Sign Up</span> </li>
+            <li class="nav1" ><span class="nav3"><a href="Login.html">Log In</a></span> | <span class="nav3"><a href="SIgnUp.html">Sign Up</a></span> </li>
             <li></li>
         </ul>
     </nav>
+    <!-- HERO SECTION  -->
     <section class="hero">
-        <!-- <div class="el1"></div> -->
         <div class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolore adipisci ullam sequi aperiam perferendis quas, quaerat aspernatur architecto, molestias numquam cum perspiciatis esse excepturi vitae aliquid odio doloribus nihil.</div>
         <img class="el1" src="Assets/Ellipse 1.png" alt="Ellipse1">
         <img class="el2" src="Assets/Ellipse 2.png" alt="Ellipse2">
         <img class="el3" src="Assets/Ellipse 3.png" alt="Ellipse3">
     </section>
-    <section class="search">
+    <!-- SEARCH SECTION  -->
+    <section class="search" id="browse">
         <input class="searchbar" type="text" placeholder="Hotels, Places, Landmarks etc">
     </section>
+
+    <!-- <section class="contact">
+        <h1 style="margin-left: 0;">Contact Us</h1>
+        <p style="padding-top: 1%;">abc@gmail.com</p>
+        <p style="padding-top: 1%;">1234567890</p>
+        <p style="padding-top: 1%;">B203, Bhaskaracharya building,</p>
+        <p>K J Somaiya College of Engineering,</p>
+        <p>Somaiya Vidyaviahar University,</p>
+        <p>Vidyavihar East, Mumbai</p>
+        <p>Maharashtra - 400077.</p>
+    </section> -->
+
     <script>
         var nav = document.getElementById('navbar');
         window.onscroll = function () {
@@ -38,9 +51,11 @@
                 nav.classList.remove('navbarbg');
             }
         }
+        // TRYING AUTOMATIC SCROLL 
         // function pageScroll() {
         // window.scrollBy(0,1);
         // scrolldelay = setTimeout(pageScroll,10);
         // }
     </script>
+
 </body>

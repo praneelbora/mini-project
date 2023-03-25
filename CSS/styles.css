@@ -35,6 +35,10 @@ ul{
     color: black;
     transition: 0.25s;
 }
+.nav3:visited{
+    color: black;
+}
+
 .nav3:hover{
     color: #FF5C00;
 }
@@ -149,4 +153,14 @@ ul{
     font-weight: bold;
     color: #28380A;
     font-size: large;
+}
+.contact{
+    background-color: #5DCA8F;
+    width: 100vw;
+    height: 30vh;
+    text-align: center;
+}
+h1{
+    padding-top: 1%;
+    text-align: center;
 }
