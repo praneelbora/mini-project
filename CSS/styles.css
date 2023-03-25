@@ -1,6 +1,7 @@
 * {
     margin: 0%;
     padding: 0%;
+    
 }
 body{
     overflow-x: hidden;
@@ -32,7 +33,9 @@ ul{
     filter: invert();
 }
 .nav3{
-    color: black;
+    text-decoration: none;
+}
+.nav3{
     transition: 0.25s;
 }
 .nav3:visited{

@@ -1,6 +1,11 @@
 * {
     margin: 0%;
     padding: 0%;
+    
+}
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 
@@ -21,11 +26,18 @@
 }
 .inner{
     margin-top: 10vh;
+    width: 100%;
 }
-.forgot{ font-size: x-small; text-align: right; color: darkblue;}
-.old{ font-size: x-small; text-align: center; color: darkblue;}
+.form{
+    width: 50%;    
+}
+.forgot{ font-size: x-small; color: black;}
+.new{ font-size: x-small; color: black;}
+.new:hover{color: blue;}
+.forgot:hover{color: blue;}
 .logo{
-    margin-top: 50%;
+    position: absolute;
+    margin-top: 5%;
     width: 70%;
     margin-left: 15%;
     transition: 0.4s;
@@ -34,7 +46,10 @@
     margin-left: 13%;
     width: 74%;
 }
-.form{
-    width: 50%;    
-    text-align: center;
+
+.bg2{
+    position: absolute;
+    width: 125%;
+    height: 111%;
+    transform: translateX(-14.7%) translateY(-4%);
 }
