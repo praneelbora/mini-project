@@ -24,6 +24,7 @@ body{
 .form{
     width: 50%;
     text-align: center;
+    margin-top: 8vh;
 }
 .old{font-size: x-small; color: black;}
 .old:hover{color: blue;}
