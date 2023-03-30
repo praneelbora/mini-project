@@ -1,0 +1,47 @@
+/* * {
+    margin: 0%;
+    padding: 0%;
+} */
+.body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.primarybox{
+    background-color: white;
+    height: 100vh;
+    padding-left: 22vw;
+    padding-top: 6vh;
+    position: absolute;
+    width: 66vw;
+}
+.secondarybox{
+    position: absolute;
+    height: 100vh;
+    background-color: #5DCA8F;
+    width: 34vw;
+    margin-left: 66vw;
+}
+.form{
+    width: 50%;
+    text-align: center;
+    margin-top: 8vh;
+}
+.old{font-size: x-small; color: black;}
+.old:hover{color: blue;}
+.logo{
+    position: absolute;
+    margin-top: 5%;
+    width: 70%;
+    margin-left: 15%;
+    transition: 0.4s;
+}
+.logo:hover{
+    margin-left: 13%;
+    width: 74%;
+}
+.bg2{
+    position: absolute;
+    width: 125%;
+    height: 111%;
+    transform: translateX(-14.7%) translateY(-4%);
+}

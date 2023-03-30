@@ -1,0 +1,19 @@
+.primarybox{
+    background-color: white;
+    height: 100vh;
+    padding-left: 22vw;
+    padding-top: 15vh;
+    position: absolute;
+    width: 66vw;
+}
+.inner{
+    margin-top: 10vh;
+    width: 100%;
+}
+.form{
+    width: 50%;    
+}
+.next{font-size: x-small; color: black;}
+.next:hover{color: blue;}
+
+

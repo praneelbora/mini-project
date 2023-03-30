@@ -1,0 +1,15 @@
+.main{
+    margin-top: 100px;
+    margin-left: 180px;
+}
+.dp{
+    width: 150px;
+    height: 150px;
+    margin-left:50% ;
+    transform: translateX(-50%);
+}
+.details{
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}

@@ -1,0 +1,25 @@
+.box{
+    position: absolute;
+    height: 100vh;
+    background-color: #5DCA8F;
+    width: 34vw;
+    margin-left: 66vw;
+}
+
+.logo{
+    position: absolute;
+    margin-top: 5%;
+    width: 70%;
+    margin-left: 15%;
+    transition: 0.4s;
+}
+.logo:hover{
+    margin-left: 13%;
+    width: 74%;
+}
+.bg2{
+    position: absolute;
+    width: 125%;
+    height: 111%;
+    transform: translateX(-14.7%) translateY(-4%);
+}
