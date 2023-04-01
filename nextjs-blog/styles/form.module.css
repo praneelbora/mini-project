@@ -10,10 +10,6 @@
     margin-top: 10vh;
     width: 100%;
 }
-.form{
-    width: 50%;    
-}
+.form{width: 50%;}
 .next{font-size: x-small; color: black;}
 .next:hover{color: blue;}
-
-
