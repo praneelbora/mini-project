@@ -2,10 +2,10 @@ import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../styles/form.module.css';
 
-document.body.style.overflow = "hidden";
+// document.body.style.overflow = "hidden";
 import Background2 from '../Components/bg2';
 
-export default function Home(){
+export default function Forgot(){
 	  return (
 		<div className={styles.body}>
 		  <span className={styles.primarybox}>

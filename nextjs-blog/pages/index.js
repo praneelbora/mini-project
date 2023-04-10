@@ -1,3 +1,4 @@
+//document.body.style.overflowX = "hidden";
 import Image from 'next/image'; 
 import Link from 'next/link';
 import logo from '../public/logo.png';
@@ -6,8 +7,10 @@ import el2 from '../public/Ellipse 2.png'
 import el3 from '../public/Ellipse 3.png'
 import styles from '../styles/styles.module.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import { useSession, signOut, signIn, signUp } from 'next-auth/react';
 
 export default function Home(){
+  const { data: session } = useSession();
     return (
       <div className={styles.upperbody}>
         {/* NAVBAR  */}
@@ -17,7 +20,7 @@ export default function Home(){
             <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}><a href="#browse" style={{color: 'inherit', fontStyle: 'normal', textDecoration: 'none'}}>Browse</a></li>
             <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}>About Us</li>
             <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}>Contact</li>
-            <li className={styles.nav1}><span><Link href="/login" className={styles.nav3}>Log In</Link></span> | <span className={styles.nav3}><Link href="/signup" className={styles.nav3}>Sign Up</Link></span> </li>
+            {!session?<li className={styles.nav1}><span><Link href="/newlogin" target className={styles.nav3}>Log In</Link></span> | <span className={styles.nav3}><Link href="/newsignup" className={styles.nav3}>Sign Up</Link></span> </li>:<li className={styles.nav1}><span>Hi</span> <Link href={'/myacc'} className={styles.nav1}>{session.user.username}</Link> <Link href={'/'} onClick={() => signOut()} className={styles.nav3}>Sign Out</Link></li>}
           </ul>
         </nav>
         {/* HERO SECTION  */}
@@ -41,6 +44,12 @@ export default function Home(){
         <p>Vidyavihar East, Mumbai</p>
         <p>Maharashtra - 400077.</p>
     </section> */}
+    <style jsx global>{`
+    html, body {
+      overflow-x: hidden;
+      position: relative;
+    }
+    `}</style>
       </div>
     );
   }

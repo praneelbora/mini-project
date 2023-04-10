@@ -1,10 +1,10 @@
+//document.body.style.overflow = "hidden";
 import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../styles/form.module.css';
 import Background2 from '../Components/bg2';
-document.body.style.overflow = "hidden";
 
-export default function Home(){
+export default function Login(){
       return (
         <div className={styles.body}>
           <span className={styles.primarybox}>
@@ -38,7 +38,11 @@ export default function Home(){
             </div>
           </span>
           <Background2></Background2>
-          
+          <style jsx global>{`
+          body{
+            overflow: hidden;
+            position: relative;
+          }`}</style>
         </div>
     );
 }

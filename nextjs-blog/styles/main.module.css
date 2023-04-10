@@ -1,10 +1,35 @@
 .main{
+    position: relative;
     margin-top: 100px;
-    margin-left: 180px;
+    justify-self: center;
+    margin-top: 100px;
+    width: 90%;
+    left: 5%;
+}
+.main1{
+    position: relative;
+    justify-self: center;
+    margin-top: 100px;
+    width: 90%;
+    left: 5%;
+    top: 7.5vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+.heading{
+    position: relative;
+    top: 17vh;
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-align: center;
 }
 .dp{
     width: 150px;
     height: 150px;
+    margin-top: 4vh;
     margin-left:50% ;
     transform: translateX(-50%);
 }
@@ -12,4 +37,18 @@
     text-align: center;
     font-size: larger;
     font-weight: bold;
+}
+.sout{
+    margin-top: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: green;
+    border-width: 1.5px;
+    border-color: black;
+    font-size:medium;
+    vertical-align: middle;
+    background-color: whitesmoke;
 }
