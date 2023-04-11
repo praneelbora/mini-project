@@ -1,0 +1,24 @@
+.form{
+    margin: 10%;
+    /* border: 1px solid; */
+    /* font-size: x-large; */
+}
+.heading{
+    position: relative;
+    top: 17vh;
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+.text{
+    font-size: x-large;
+}
+.inp{
+    vertical-align: text-bottom;
+    /* display: flex; */
+    /* margin-left: 5%; */
+}
+.desc{
+    vertical-align: top;
+}

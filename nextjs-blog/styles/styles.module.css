@@ -22,7 +22,7 @@
     margin-top: 6.5vh;
     text-align: right;
     transform: translateY(-50%);
-    
+    width: 70%;
 }
 
 .nav1{
@@ -58,14 +58,16 @@
     color: #FF5C00;
 }
 .logo{
-    height: 90%;
+    min-width: 24%;
+    height: auto;
     top: 5%;
     width: auto;
     margin-left: 4.5%;
     transition: 0.4s;
 }
 .logo:hover{
-    height: 94%;
+    min-width: 25%;
+    height: auto;
     top:3%;
     width: auto;
     margin-left: 4%;
