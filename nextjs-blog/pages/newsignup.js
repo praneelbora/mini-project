@@ -47,6 +47,7 @@ function SignUpForm() {
     getSession().then((session) => {
       if (session) {
         router.replace('/');
+		//window.close();
       } else {
         setIsLoading(false);
       }
@@ -71,7 +72,7 @@ function SignUpForm() {
         const result = await createUser(enteredFname, enteredUsername, enteredEmail, enteredPassword);
         setRegistered(true)
 		console.log(success);
-        router.replace('/newlogin');
+        //router.replace('/newlogin');
       } catch (error) {
         console.log(error);
 		setWrongUserPass(true);

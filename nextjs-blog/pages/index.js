@@ -20,7 +20,7 @@ export default function Home(){
             <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}><a href="#browse" style={{color: 'inherit', fontStyle: 'normal', textDecoration: 'none'}}>Browse</a></li>
             <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}>About Us</li>
             <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}>Contact</li>
-            {!session?<li className={styles.nav1}><span><Link href="/newlogin" target className={styles.nav3}>Log In</Link></span> | <span className={styles.nav3}><Link href="/newsignup" className={styles.nav3}>Sign Up</Link></span> </li>:<li className={styles.nav1}><span>Hi</span> <Link href={'/myacc'} className={styles.nav1}>{session.user.username}</Link> <Link href={'/'} onClick={() => signOut()} className={styles.nav3}>Sign Out</Link></li>}
+            {!session?<li className={styles.nav1}><span><Link href="/newlogin" target='_blank' className={styles.nav3}>Log In</Link></span> | <span className={styles.nav3}><Link href="/newsignup" target='_blank' className={styles.nav3}>Sign Up</Link></span> </li>:<li className={styles.nav1}><span>Hi</span> <Link href={'/myacc'} className={styles.nav1}>{session.user.username}</Link> <Link href={'/'} onClick={() => signOut()} className={styles.nav3}>Sign Out</Link></li>}
           </ul>
         </nav>
         {/* HERO SECTION  */}
