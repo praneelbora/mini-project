@@ -22,12 +22,6 @@ export default function Dashboard()
             <Link href='/myacc'><Image className= {dash.profile} src={Profile} alt="Profile Image"/></Link> 
           </ul>
         </nav>
-        // <div className={dash.box}>
-        //     <Link href='/myacc'><Image className= {dash.profile} src={Profile} alt="Profile Image"/></Link> 
-        //     <Link href='/myreviews'><Image className={dash.logo} src={Read} alt="My Reviews"/></Link> 
-        //     <Link href='/writereview'><Image className={dash.logo} src={Write} alt="Write Reviews"/></Link> 
-        //     <Link href='/search'><Image className={dash.logo} src={Search} alt="Search Reviews"/></Link> 
-        //     <Image className={dash.logo} src={SignOut} alt="Sign Out" onClick={() => signOut()}/>
-        // </div>
+        
     );
 }

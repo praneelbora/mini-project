@@ -2,12 +2,14 @@
     top: 0;
     position: fixed;
     width: 100vw;
+    min-height: 80px;
     height: 13vh;
     z-index: 10;
     transition: 500ms;
     background-color: #35A24E;
 }
 .ull{
+
     position: relative;
     display: inline;
     float: right;
@@ -28,9 +30,7 @@
     cursor:pointer;
     /* float; */
 }
-/* .nav:hover{
-    filter: invert();
-} */
+
 .nav3{
     text-decoration: none;
     color: whitesmoke;

@@ -2,27 +2,29 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Profile from '../public/Profile.png'
 import Dashboard from '../Components/Dashboard';
 import write from '../styles/write.module.css'
+import TextareaAutosize from 'react-textarea-autosize';
 export default function WriteReview(){
     return(
         <>
+        
             <Dashboard img={Profile}></Dashboard>
             <h1 className={write.heading}>Write Review</h1>
             <form className={write.form}>
-
+          
                 {/* TITLE */}
                 <div className="form-floating mb-3">
                     <input type="text" className="form-control" id="Title" placeholder="johnwick" required />
                     <label>Title</label>
                   </div>
                 <div className="form-floating mb-3">
-                    <input type="text" className="form-control" id="Title" placeholder="johnwick" required />
+                    <TextareaAutosize type="text" className="form-control" id="Title" placeholder="johnwick" required />
                     <label>Description</label>
                   </div>                
                 
                 {/* DOB  */}
                 <div className="form-floating mb-3">
                     <input type="date" className="form-control" id="bdate" placeholder="date" required />
-                    <label htmlFor="bdate">Date of Birth</label>
+                    <label htmlFor="bdate">Date of Travel</label>
                 </div>
                 {/* COUNTRY */}
                 <div className="form-floating mb-3">
