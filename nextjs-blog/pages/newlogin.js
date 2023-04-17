@@ -21,9 +21,7 @@ function LogInForm() {
   useEffect(() => {
     getSession().then((session) => {
       if (session) {
-        //router.replace('/');
         window.close();
-        //window.addEventListener("load", window.close);
       } else {
         setIsLoading(false);
       }
@@ -47,7 +45,6 @@ function LogInForm() {
         password: enteredPassword,
       });
 
-      //router.close();
   }
     return (
         <div className={styles.body}>

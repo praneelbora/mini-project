@@ -27,6 +27,11 @@ const userSchema = new mongoose.Schema({
         minLength: [6, "Your password must be at least 6 characters long"],
         select: false, //dont send back password after request
     },
+    profilePic: {
+        type: String,
+        required: true,
+        default: 'https://res.cloudinary.com/dkslaee8q/image/upload/v1681627905/profilePics/pngegg_qkawtl.png',
+    },
     role: {
         type: String,
         default: 'user',

@@ -3,11 +3,30 @@ import Profile from '../public/Profile.png'
 import Dashboard from '../Components/Dashboard';
 import write from '../styles/write.module.css'
 import TextareaAutosize from 'react-textarea-autosize';
+import { useState, useEffect } from 'react';
+import { useSession, getSession } from 'next-auth/react';
+
 export default function WriteReview(){
+  const [isLoading, setIsLoading] = useState(true);
+  // check if logged in and redirect to login page if so
+  const { data: session } = useSession();
+  useEffect(() => {
+      getSession().then((sess) => {
+          if(!sess){
+              router.replace('/');
+          } else {
+              setIsLoading(false);
+          }
+      })
+  });
+
+  if (isLoading) {
+      return <p>Loading...</p>;
+  }
+
     return(
         <>
-        
-            <Dashboard img={Profile}></Dashboard>
+            <Dashboard profileImg={session?.user?.profilePic}></Dashboard>
             <h1 className={write.heading}>Write Review</h1>
             <form className={write.form}>
           

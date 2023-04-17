@@ -11,6 +11,11 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    dashImg: {
+        type: String,
+        required: true,
+        default: ''
+    },
     desc: {
         type: String,
         required: true

@@ -43,11 +43,12 @@ export default NextAuth({
     callbacks: {
         // We can pass in additional information from the user document MongoDB returns
         // This could be avatars, role, display name, etc...
-        async jwt({token, user}){
+        async jwt({token, user, trigger, session}){
             if (user) {
                 token.user = {
                     _id: user._id,
                     fname: user.fname,
+                    profilePic: user.profilePic,
                     username: user.username,
                     email: user.email,
                     role: user.role,

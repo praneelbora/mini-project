@@ -35,6 +35,10 @@
     text-decoration: none;
     color: whitesmoke;
 }
+.nav3:hover{
+    color: black;
+    transition: 0.35s;
+}
 .profile{
     width: 8vh;
     height: 8vh;

@@ -9,7 +9,7 @@ import Search from '../public/Search_logo.png';
 import SignOut from '../public/vercel.svg';
 import { signOut } from 'next-auth/react';
 
-export default function Dashboard()
+export default function Dashboard({ profileImg })
 {
     return(
         <nav className={dash.navbar} id="navbar">
@@ -19,9 +19,8 @@ export default function Dashboard()
             <li className={dash.nav}><Link href='/writereview' className={dash.nav3}>Write Review</Link></li>
             <li className={dash.nav}><Link href='/search' className={dash.nav3}>Search</Link></li>
             {/* <li className={dash.nav1}><Link href='/myacc'><Image className= dash.profile} src={Profile} alt="Profile Image"/></Link></li> */}
-            <Link href='/myacc'><Image className= {dash.profile} src={Profile} alt="Profile Image"/></Link> 
+            <Link href='/myacc'><Image className= {dash.profile} src={profileImg} alt="Profile Image" width={500} height={500}/></Link> 
           </ul>
         </nav>
-        
     );
 }

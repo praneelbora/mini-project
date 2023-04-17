@@ -10,6 +10,33 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useSession, signOut, signIn, signUp } from 'next-auth/react';
 
 export default function Home(){
+
+  const popupCenter = (url, title) => {
+    const dualScreenLeft = window.screenLeft ?? window.screenX;
+    const dualScreenTop = window.screenTop ?? window.screenY;
+    const width =
+      window.innerWidth ?? document.documentElement.clientWidth ?? screen.width;
+
+    const height =
+      window.innerHeight ??
+      document.documentElement.clientHeight ??
+      screen.height;
+
+    const systemZoom = width / window.screen.availWidth;
+
+    const left = (width - 500) / 2 / systemZoom + dualScreenLeft;
+    const top = (height - 550) / 2 / systemZoom + dualScreenTop;
+
+    const newWindow = window.open(
+      url,
+      title,
+      `width=${500 / systemZoom},height=${550 / systemZoom
+      },top=${top},left=${left}`
+    );
+
+    newWindow?.focus();
+  };
+
   const { data: session } = useSession();
     return (
       <div className={styles.upperbody}>
@@ -20,7 +47,7 @@ export default function Home(){
             <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}><a href="#browse" style={{color: 'inherit', fontStyle: 'normal', textDecoration: 'none'}}>Browse</a></li>
             <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}>About Us</li>
             <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}>Contact</li>
-            {!session?<li className={styles.nav1}><span><Link href="/newlogin" target='_blank' className={styles.nav3}>Log In</Link></span> | <span className={styles.nav3}><Link href="/newsignup" target='_blank' className={styles.nav3}>Sign Up</Link></span> </li>:<li className={styles.nav1}><span>Hi</span> <Link href={'/myacc'} className={styles.nav2}>{session.user.username}</Link> | <Link href={'/'} onClick={() => signOut()} className={styles.nav3}>Sign Out</Link></li>}
+            {!session?<li className={styles.nav1}><span><Link href="/newlogin" target='_blank' className={styles.nav3}>Log In</Link></span> | <span className={styles.nav3}><Link href="/newsignup" target='_blank' className={styles.nav3}>Sign Up</Link></span> </li>:<li className={styles.nav1}><span>Hi</span> <Link href={'/myacc'} className={styles.user}>{session.user.username}</Link> | <Link href={'/'} onClick={() => signOut()} className={styles.nav3}>Sign Out</Link></li>}
           </ul>
         </nav>
         {/* HERO SECTION  */}

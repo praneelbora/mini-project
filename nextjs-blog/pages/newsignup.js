@@ -46,8 +46,7 @@ function SignUpForm() {
 	}
     getSession().then((session) => {
       if (session) {
-        router.replace('/');
-		//window.close();
+        window.close();
       } else {
         setIsLoading(false);
       }
@@ -72,7 +71,7 @@ function SignUpForm() {
         const result = await createUser(enteredFname, enteredUsername, enteredEmail, enteredPassword);
         setRegistered(true)
 		console.log(success);
-        //router.replace('/newlogin');
+        router.replace('/newlogin');
       } catch (error) {
         console.log(error);
 		setWrongUserPass(true);
@@ -123,7 +122,7 @@ function SignUpForm() {
 						<div style={{textAlign: 'center'}}>
 						<Link className={styles.next} href="/newlogin" >Have an account? Sign In here</Link>
 						{wrongUserPass?
-							<p style={{color: 'red'}}>This username/password is already taken!</p>:<></>
+							<p style={{color: 'red'}}>This username/email is already taken!</p>:<></>
 						}
 						</div>         
 					</form>
