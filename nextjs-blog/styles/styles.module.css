@@ -16,13 +16,11 @@
     padding: 0%;
 }
 .ull{
-    position: relative;
-    display: inline;
-    float: right;
-    margin-top: 6.5vh;
-    width: 60%;
-    text-align: right;
-    transform: translateY(-50%);
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: 0.35s;
+    cursor:pointer;
     
 }
 .user{
@@ -49,12 +47,7 @@
     /* float; */
 }
 .nav2{
-    font-size: x-large;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    transition: 0.35s;
-    color: gray;
-    cursor:pointer;
+    
 }
 .nav2:hover{
     filter: invert();
@@ -88,7 +81,7 @@
 
 .navbar{
     position: fixed;
-    width: 100vw;
+    width: 100vw !important; 
     height: 13vh;
     z-index: 10;
     transition: 500ms ;
@@ -146,6 +139,7 @@
     background-color:#5DCA8F;
     background-image: url('../public/Bg_1.png');
     background-size: 100vw 100vh;
+    
     /* background-size: 100vw 100vh; */
     width: 100vw;
     height: 100vh; 
