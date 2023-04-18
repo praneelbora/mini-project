@@ -14,25 +14,25 @@
         <div class="form">
             <h2>Sign Up</h2>
             <br>
-            <form> 
+            <form method="post" action="register.php"> 
                 <!-- FULL NAME -->
                 <div class="form-floating mb-3">
-                    <input type="name" class="form-control" id="name" placeholder="John Wick" required>
+                    <input type="name" class="form-control" id="fname" name="fname" required>
                     <label for="name">Full Name</label>
                 </div>
                 <!-- PHONE NUMBER  -->
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="username" placeholder="johnwick" required>
+                    <input type="text" class="form-control" id="username" name="username" required>
                     <label for="username">Username</label>
                 </div>
                 <!-- EMAIL ID -->
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                    <input type="email" class="form-control" id="email" name="email" required>
                     <label for="email">Email address</label>
                 </div>
                 <!-- PASSWORD  -->
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="pass" placeholder="Password" required>
+                    <input type="password" class="form-control" id="pass" name="pass" required>
                     <label for="pass">Password</label>
                 </div>
                 <!-- CONFIRM PASSWORD -->
@@ -41,10 +41,10 @@
                     <label for="confirmpass">Confirm Password</label>
                 </div> -->
                 <!-- DOB  -->
-                <div class="form-floating mb-3">
+                <!-- <div class="form-floating mb-3">
                     <input type="date" class="form-control" id="bdate" placeholder="date"  required>
                     <label for="bdate">Date of Birth</label>
-                </div>
+                </div> -->
                 <!-- GENDER  -->
                 <!-- <div class="form-floating mb-4">
                     <select class="form-select" id="gender" aria-label="Floating label select example"  >
