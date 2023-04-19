@@ -3,9 +3,9 @@ import User from './user'
 
 const reviewSchema = new mongoose.Schema({
     userId: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: "User"
+        ref: "User",
     },
     title: {
         type: String,
@@ -13,8 +13,7 @@ const reviewSchema = new mongoose.Schema({
     },
     dashImg: {
         type: String,
-        required: true,
-        default: ''
+        default: 'https://res.cloudinary.com/dkslaee8q/image/upload/v1681582347/samples/landscapes/nature-mountains.jpg'
     },
     desc: {
         type: String,
@@ -25,11 +24,6 @@ const reviewSchema = new mongoose.Schema({
         required: true,
         min: 0,
         max: 5
-    },
-    visitDate: {
-        type: String,
-        required: true,
-        max: Date.now().toString()
     },
     country: {
         type: String,
@@ -52,10 +46,11 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         default: "Processing..."
     },
-    createdAt: {
-        type: Date,
-        default: Date.now()
+    traveledAt: {
+        type: Date
     }
 })
+
+reviewSchema.set('timestamps', true);
 
 export default mongoose.models.Review || mongoose.model('Review', reviewSchema)

@@ -44,11 +44,11 @@ const userSchema = new mongoose.Schema({
         }
     },
     reviews: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Review"
     }],
     upvotedReviews: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Review"
     }],
     createdAt: {

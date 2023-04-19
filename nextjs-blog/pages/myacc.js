@@ -56,10 +56,10 @@ export default function MyAcc(){
         reader.readAsDataURL(changeEvent.target.files[0]);
     }
 
-    const reloadSession = () => {
-      const event = new Event("visibilitychange");
-      document.dispatchEvent(event);
-    };
+    // const reloadSession = () => {
+    //   const event = new Event("visibilitychange");
+    //   document.dispatchEvent(event);
+    // };
 
     async function handleOnSubmit(event) {
         event.preventDefault();
@@ -87,7 +87,7 @@ export default function MyAcc(){
             console.log(data)
             const result = await updateProfile(session?.user?._id, data.secure_url);
             console.log(success);
-            reloadSession();
+            //reloadSession();
           } catch (error) {
             console.log(error)
           }
@@ -101,7 +101,7 @@ export default function MyAcc(){
         <>
             <Dashboard profileImg={session?.user?.profilePic}></Dashboard>
             <div className={main.main}>
-            <Image className={main.dp} src={session?.user?.profilePic} alt='Profile Image' width={500} height={500}/>
+            <Image className={main.dp} src={session?.user?.profilePic} alt='Profile Image' width={500} height={500} style={{borderRadius:'50%'}}/>
                 {/* USER NAME & USERNAME -- BACKEND CONNECTION */}
                 <br/>
                 <br/>
@@ -112,9 +112,9 @@ export default function MyAcc(){
                     <br/>
                     <button onClick={() => signOut()} className={main.sout}>Sign Out</button>
                 </div>
-                <form method="post" onChange={handleOnChange} onSubmit={handleOnSubmit}>
-                <label>Change your Profile Pic:</label>
-                <input type="file" name="file" />
+                <form method="post" onChange={handleOnChange} onSubmit={handleOnSubmit} className={main.form}>
+                <label for="file" className="form-label">Change your profile Pic:</label>
+                <input className="form-control" type="file" id="file" name='file' />
                 {imageSrc && !uploadData && (
                     <p>
                     <button>Upload Files</button>

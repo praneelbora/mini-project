@@ -20,8 +20,11 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     transition: 0.35s;
-    cursor:pointer;
-    
+    cursor:pointer;   
+}
+.ull li:hover{
+    filter: invert();
+    transition: 400ms;
 }
 .user{
     text-decoration: none;
@@ -46,9 +49,7 @@
     cursor:pointer;
     /* float; */
 }
-.nav2{
-    
-}
+
 .nav2:hover{
     filter: invert();
 }
@@ -66,34 +67,33 @@
     color: #FF5C00;
 }
 .logo{
-    height: 90%;
+    height: 85px;
     top: 5%;
     width: auto;
     margin-left: 4.5%;
     transition: 0.4s;
 }
-.logo:hover{
+/* .logo:hover{
     height: 94%;
     top:3%;
     width: auto;
     margin-left: 4%;
-}
+} */
 
 .navbar{
     position: fixed;
-    width: 100vw !important; 
-    height: 13vh;
+    width: 100vw !important;
     z-index: 10;
     transition: 500ms ;
 }
-.navbarbg {
+/* .navbarbg {
     position: fixed;
     width: 100vw;
     height: 13vh;
     z-index: 10;
     transition: 500ms ;
     background-color: #35A24E;
-}
+} */
 
 .hero {
     background-color:#35A24E;

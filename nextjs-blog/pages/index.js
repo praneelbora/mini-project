@@ -45,8 +45,8 @@ export default function Home(){
           </ul>
         </nav> */}
         <nav className= {`navbar navbar-expand-lg ${styles.navbar}`} style={{background: `rgb(53, 162, 78, ${backgroundTransparency})`}}>
-          <div className="container-fluid"style={{backfaceVisibility:'revert'}}>
-            <Link className="navbar-brand ms-3" href="/"><Image className={styles.logo} src={logo} alt='Logo'/></Link>
+          <div className="container-fluid">
+            <Link className="ms-3" href="/"><Image className={styles.logo} src={logo} alt='Logo'/></Link>
             
             {/* <div className='navbar-brand'></div> */}
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,13 +63,20 @@ export default function Home(){
                 <li className="nav-item mx-2">
                   <Link className="nav-link active" aria-current="page" href="#">Contact</Link>
                 </li>
+                {!session?<>
                 <li className="nav-item mx-2">
                   <Link className="nav-link active" aria-current="page" href="/newlogin" target='_blank'>Log In</Link>                  
                 </li> 
-                  {/* <Link className='nav-link'>|</Link> */}
                 <li className="nav-item mx-2">
                   <Link className="nav-link active" aria-current="page" href="/newsignup"target='_blank'>Sign Up</Link>                  
-                </li>
+                </li></>:<>
+                <li className="nav-item mx-2">
+                  <Link className="nav-link active" aria-current="page" href="/myacc">Hi {session?.user?.username}</Link>                  
+                </li> 
+                <li className="nav-item mx-2">
+                  <Link className="nav-link active" aria-current="page" href={'/'} onClick={() => signOut()}>Sign Out</Link>                  
+                </li></>}
+                
                 
 
                 {/* <li className="nav-item dropdown">
