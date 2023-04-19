@@ -1,8 +1,8 @@
 <?php
     $url='localhost';
-    $username='root';
+    $rootusername='root';
     $password='';
-    $conn=mysqli_connect($url,$username,$password,"fregister");
+    $conn=mysqli_connect($url,$rootusername,$password,"form_data");
     if(!$conn){
         die('Could not Connect My Sql:' .mysql_error());
     }
