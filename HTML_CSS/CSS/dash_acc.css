@@ -19,6 +19,14 @@ img{
     margin-bottom: 4vh;
 }
 .main{
+    position: relative;
+    margin-top: 100px;
+    justify-self: center;
+    margin-top: 100px;
+    width: 90%;
+    left: 5%;
+}
+.main1{
     /* display: inline; */
     /* align-items: center; */
     /* position: absolute; */
@@ -48,5 +56,14 @@ img{
 }
 .read_logo{
     margin-top: 9vw;
+}
+.imgform{
+    width: 300px;
+    max-width: 40vw;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 

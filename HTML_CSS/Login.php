@@ -47,7 +47,6 @@
                         <!-- <input class="btn btn-primary mb-3" type="submit" value="Log In"> -->
                         <!-- <input class="btn btn-outline-dark mb-3" type="submit" value="Log In"> -->
                         <input class="btn btn-outline-success" type="submit" value="Log In" >
-                        <a href="index.html"> LOGIN</a>
                         
                     </div>
 
