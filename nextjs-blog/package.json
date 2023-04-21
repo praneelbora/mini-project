@@ -19,6 +19,7 @@
     "next-connect": "^0.13.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-lines-ellipsis": "^0.15.3",
     "react-modal": "^3.16.1",
     "react-textarea-autosize": "^8.4.1",
     "validator": "^13.9.0"

@@ -8,3 +8,7 @@
     margin-bottom: 2vh;
     margin-top: 2vh;
 }
+.cover{
+    height: 300px;
+    max-width: 100%;
+}

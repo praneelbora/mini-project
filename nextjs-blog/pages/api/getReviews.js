@@ -7,7 +7,7 @@ handler.get(getReviews)
 async function getReviews(req, res) {
     dbConnect();
     let reviews = await Review.find()
-    res.status(200).json({ reviews });
+    res.status(200).json( reviews );
 }
 
 export default handler;

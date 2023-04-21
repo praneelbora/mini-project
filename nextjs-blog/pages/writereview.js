@@ -152,25 +152,25 @@ export default function WriteReview(){
                   </div>
                  
                 <label className='col-md-2 my-2 me-2'>Rating</label>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" checked={rating === "1"} onChange={onOptionChange}/>
-                <label class="form-check-label" for="inlineRadio1">1</label>
+                <div className="form-check form-check-inline">
+                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" checked={rating === "1"} onChange={onOptionChange}/>
+                <label className="form-check-label" for="inlineRadio1">1</label>
                 </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" checked={rating === "2"} onChange={onOptionChange}/>
-                <label class="form-check-label" for="inlineRadio2">2</label>
+                <div className="form-check form-check-inline">
+                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" checked={rating === "2"} onChange={onOptionChange}/>
+                <label className="form-check-label" for="inlineRadio2">2</label>
                 </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3" checked={rating === "3"} onChange={onOptionChange}/>
-                <label class="form-check-label" for="inlineRadio3">3</label>
+                <div className="form-check form-check-inline">
+                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3" checked={rating === "3"} onChange={onOptionChange}/>
+                <label className="form-check-label" for="inlineRadio3">3</label>
                 </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4" checked={rating === "4"} onChange={onOptionChange}/>
-                <label class="form-check-label" for="inlineRadio4">4</label>
+                <div className="form-check form-check-inline">
+                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4" checked={rating === "4"} onChange={onOptionChange}/>
+                <label className="form-check-label" for="inlineRadio4">4</label>
                 </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5" checked={rating === "5"} onChange={onOptionChange}/>
-                <label class="form-check-label" for="inlineRadio5">5</label>
+                <div className="form-check form-check-inline">
+                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5" checked={rating === "5"} onChange={onOptionChange}/>
+                <label className="form-check-label" for="inlineRadio5">5</label>
                 </div>
                 {/* <p>{rating}</p> */}<br/>
                 <label for="file" className="form-label mt-3">Upload an image file for the review <i>(a placeholder image will be used if nothing uploaded!)</i></label>
