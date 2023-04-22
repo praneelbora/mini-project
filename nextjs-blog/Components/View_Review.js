@@ -7,7 +7,7 @@ import Head from 'next/head';
 import LinesEllipsis from 'react-lines-ellipsis'
 
 
-export default function VReview({ dashImg, title, reviewer, desc, rating, eagleScore, country, city, upvotes, createdAt })
+export default function VReview({ dashImg, title, reviewer, desc, rating, eagleScore, country, city, upvotes, upvoted, createdAt })
 {   
   const newdate = createdAt
   const date = new Date(createdAt).toLocaleString("en-GB", {
@@ -20,8 +20,8 @@ export default function VReview({ dashImg, title, reviewer, desc, rating, eagleS
   
     return(
         // <div classNameName={view.box}>
-            <div className="col-lg-4 col-md-6 col-sm-12 pb-5">
-                <div className="card" style={{'maxHeight':'625px'}}>
+            <div className="col-2 col-lg-4 col-md-6 col-sm-12 pb-5">
+                <div className="card" style={{'maxHeight':'625px', 'minWidth':'300px'}}>
                     <Image src={dashImg} className={`card-img-top ${view.cover}`} alt="..." height={500} width={500}/>
                     <div className="card-body">
                       {/* <h5 className="card-title mb-1">{title}</h5> */}

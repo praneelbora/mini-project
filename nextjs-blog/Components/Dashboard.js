@@ -17,7 +17,7 @@ export default function Dashboard({ profileImg })
           <ul className={dash.ull} style={{listStyleType: 'none'}}>
             <li className={dash.nav}><Link href='/myreviews' className={dash.nav3}>My Reviews</Link></li>
             <li className={dash.nav}><Link href='/writereview' className={dash.nav3}>Write Review</Link></li>
-            <li className={dash.nav}><Link href='/search' className={dash.nav3}>Search</Link></li>
+            <li className={dash.nav}><Link href='/search' className={dash.nav3}>Browse</Link></li>
             {/* <li className={dash.nav1}><Link href='/myacc'><Image className= dash.profile} src={Profile} alt="Profile Image"/></Link></li> */}
             <Link href='/myacc'><Image className= {dash.profile} src={profileImg} alt="Profile Image" width={500} height={500} style={{borderRadius:'50%'}}/></Link> 
           </ul>

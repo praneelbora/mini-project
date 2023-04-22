@@ -10,20 +10,20 @@ import main from '../styles/main.module.css';
 import { useState, useEffect } from 'react';
 import { useSession, getSession } from 'next-auth/react';
 
-export async function prevReviews() {
-    const response = await fetch('/api/getReviews', {
-        method: 'GET'
-      });
+// export async function prevReviews() {
+//     const response = await fetch('/api/getReviews', {
+//         method: 'GET'
+//       });
     
-      const data = await response.json();
+//       const data = await response.json();
     
-      if (!response.ok) {
-        throw new Error(data.message || 'Something went wrong!');
-      }
+//       if (!response.ok) {
+//         throw new Error(data.message || 'Something went wrong!');
+//       }
 
-    //   setArr(data)
-      return data;
-}
+//     //   setArr(data)
+//       return data;
+// }
 
 export async function getServerSideProps(context) {
     dbConnect();
@@ -61,7 +61,7 @@ export default function MyReviews({reviews}){
             <h1 className={main.heading}>Previous Reviews:</h1>
             <div className={main.main1}>
             <div className="row my-1">
-            {reviews.map((review) => {
+            {reviews.sort((a, b) => a.createdAt < b.createdAt ? 1 : -1).map((review) => {
                 if (review.userId._id===newId){
                 return(
                 <VReview key={review._id} dashImg={review.dashImg} title={review.title} reviewer={review.userId.username} desc={review.desc} rating={review.rating} eagleScore={review.eagleScore} country={review.country} city={review.city} upvotes={review.upvotes} createdAt={review.createdAt} />
