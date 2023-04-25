@@ -1,0 +1,17 @@
+.box{
+    text-align: center;
+    margin: 7vh 8vw;
+    border: 1px solid;
+    padding-top: 1vh;
+}
+.i{
+    height: auto;
+    width: 100%;
+}
+.deets{
+    border: 1px solid;
+    margin-left: 17vw;
+    /* margin-right: 5vw; */
+    /* text-align: left; */
+    width: 50vw;
+}
