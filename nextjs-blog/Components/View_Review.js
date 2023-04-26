@@ -7,7 +7,7 @@ import Head from 'next/head';
 import LinesEllipsis from 'react-lines-ellipsis'
 
 
-export default function VReview({ dashImg, title, reviewer, desc, rating, eagleScore, country, city, upvotes, upvoted, createdAt })
+export default function VReview({ rid, dashImg, title, reviewer, desc, rating, eagleScore, country, city, upvotes, upvoted, createdAt })
 {   
   const newdate = createdAt
   const date = new Date(createdAt).toLocaleString("en-GB", {
@@ -34,7 +34,7 @@ export default function VReview({ dashImg, title, reviewer, desc, rating, eagleS
                       <li className="list-group-item"><b>Rating:</b> {rating}{/*<i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star"></i> <i className="bi bi-star"></i>*/}<span style={{'float':'right'}}><b>EagleScore:</b> {eagleScore}{/*<i className="bi bi-8-circle-fill"></i>*/}</span></li>
                       <li className="list-group-item"><b>Country:</b> {country} <span style={{'float':'right'}}><b>City:</b> {city}</span></li>
                       <li className="list-group-item">
-                        <Link href="#" className="card-link btn btn-primary">Read Full Review</Link>
+                        <Link href={`/review/${rid}`} className="card-link btn btn-primary" target="_blank">Read Full Review</Link>
                         <Link href="#" className="card-link btn btn-outline-success mb-n1" style={{'float':'right'}}><span>{upvotes}</span>&nbsp;&nbsp;<i className="bi bi-hand-thumbs-up"></i></Link>
                       </li>
                     </ul>
