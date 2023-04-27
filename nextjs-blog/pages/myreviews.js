@@ -64,19 +64,9 @@ export default function MyReviews({reviews}){
             {reviews.sort((a, b) => a.createdAt < b.createdAt ? 1 : -1).map((review) => {
                 if (review.userId._id===newId){
                 return(
-                <VReview key={review._id} rid={review._id} dashImg={review.dashImg} title={review.title} reviewer={review.userId.username} desc={review.desc} rating={review.rating} eagleScore={review.eagleScore} country={review.country} city={review.city} upvotes={review.upvotes} createdAt={review.createdAt} />
+                <VReview key={review._id} rid={review._id} dashImg={review.dashImg} title={review.title} reviewer={review.userId.username} desc={review.desc} rating={review.rating} eagleScore={review.eagleScore} country={review.country} city={review.city} upvotes={review.upvotes.length} upvoted={review.upvotes.includes(newId)} createdAt={review.createdAt} />
             )}})}
-                {/* <VReview/>
-                <VReview/>
-                <VReview/>
-                <VReview/>
-                <VReview/>
-                <VReview/>
-                <VReview/>
-                <VReview/>
-                <VReview/>
-                <VReview/>
-                <VReview/> */}
+                
                 </div>
             </div>
         </>
