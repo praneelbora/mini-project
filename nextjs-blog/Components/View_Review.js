@@ -5,11 +5,34 @@ import view from './CSS/view.module.css';
 import Placeholder from '../public/Bg_1.png'
 import Head from 'next/head';
 import LinesEllipsis from 'react-lines-ellipsis'
+import { useSession } from 'next-auth/react';
+import { useState, useEffect } from 'react';
 
+async function toggleLike(id,user_id) {
+  const response = await fetch('/api/likeUnlike', {
+    method: 'POST',
+    body: JSON.stringify({ id, user_id }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || 'Something went wrong!');
+  }
+
+  return data;
+}
 
 export default function VReview({ rid, dashImg, title, reviewer, desc, rating, eagleScore, country, city, upvotes, upvoted, createdAt })
 {   
+  const { data: session } = useSession();
+  const [disableState, setDisableState] = useState(false);
+  const [likeState, setLikeState] = useState(upvoted)
   const newdate = createdAt
+  useEffect(() => { setLikeState(upvoted)}, [upvoted] )
   const date = new Date(createdAt).toLocaleString("en-GB", {
     day: "numeric",
     month: "short",
@@ -17,6 +40,20 @@ export default function VReview({ rid, dashImg, title, reviewer, desc, rating, e
     hour: "numeric",
     minute: "2-digit"
   });
+
+  async function handleLikeUnlike(){
+    try {
+      // console.log(data)
+      setDisableState(true)
+      const result = await toggleLike(rid,session?.user?._id);
+      // router.reload()
+      console.log('success');
+      setDisableState(false)
+      //reloadSession();
+    } catch (error) {
+      console.log(error)
+    }
+  }
   
     return(
         // <div classNameName={view.box}>
@@ -35,7 +72,8 @@ export default function VReview({ rid, dashImg, title, reviewer, desc, rating, e
                       <li className="list-group-item"><b>Country:</b> {country} <span style={{'float':'right'}}><b>City:</b> {city}</span></li>
                       <li className="list-group-item">
                         <Link href={`/review/${rid}`} className="card-link btn btn-primary" target="_blank">Read Full Review</Link>
-                        <Link href="#" className="card-link btn btn-outline-success mb-n1" style={{'float':'right'}}><span>{upvotes}</span>&nbsp;&nbsp;<i className="bi bi-hand-thumbs-up"></i></Link>
+                        {/* {console.log(likeState,upvoted)} */}
+                        {upvoted?(likeState?<button onClick={()=>{handleLikeUnlike(),setLikeState(!likeState)}} className="card-link btn btn-success mb-n1" style={{'float':'right'}} disabled={disableState}><span>{upvotes}</span>&nbsp;&nbsp;<i className="bi bi-hand-thumbs-up-fill"></i></button>:<button onClick={()=>{handleLikeUnlike(),setLikeState(!likeState)}} className="card-link btn btn-outline-success mb-n1" style={{'float':'right'}} disabled={disableState}><span>{upvotes-1}</span>&nbsp;&nbsp;<i className="bi bi-hand-thumbs-up"></i></button>):(likeState?<button onClick={()=>{handleLikeUnlike(),setLikeState(!likeState)}} className="card-link btn btn-success mb-n1" style={{'float':'right'}} disabled={disableState}><span>{upvotes+1}</span>&nbsp;&nbsp;<i className="bi bi-hand-thumbs-up-fill"></i></button>:<button onClick={()=>{handleLikeUnlike(),setLikeState(!likeState)}} className="card-link btn btn-outline-success mb-n1" style={{'float':'right'}} disabled={disableState}><span>{upvotes}</span>&nbsp;&nbsp;<i className="bi bi-hand-thumbs-up"></i></button>)}
                       </li>
                     </ul>
                     <div className="card-footer" height={10}>

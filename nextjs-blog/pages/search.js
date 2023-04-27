@@ -24,6 +24,7 @@ export default function Search({reviews}){
     const [isLoading, setIsLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('')
     const searchRef = useRef();
+    const router = useRouter();
     // check if logged in and redirect to login page if so
     const { data: session } = useSession();
     useEffect(() => {
@@ -64,7 +65,6 @@ export default function Search({reviews}){
             </div>
             <div className="row">
             {filteredReviews.sort((a, b) => a.createdAt < b.createdAt ? 1 : -1).map((review) => {
-                
                 return(
                 <VReview key={review._id} rid={review._id} dashImg={review.dashImg} title={review.title} reviewer={review.userId.username} desc={review.desc} rating={review.rating} eagleScore={review.eagleScore} country={review.country} city={review.city} upvotes={review.upvotes.length} upvoted={review.upvotes.includes(newId)} createdAt={review.createdAt} />
             )})}
