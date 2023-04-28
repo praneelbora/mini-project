@@ -57,7 +57,7 @@ export default function VReview({ rid, dashImg, title, reviewer, desc, rating, e
   
     return(
         // <div classNameName={view.box}>
-            <div className="col-2 col-lg-4 col-md-6 col-sm-12 pb-5">
+            <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
                 <div className="card" style={{'maxHeight':'625px', 'minWidth':'300px'}}>
                     <Image src={dashImg} className={`card-img-top ${view.cover}`} alt="..." height={500} width={500}/>
                     <div className="card-body">

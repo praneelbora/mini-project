@@ -17,15 +17,11 @@ async function updateProfile(req, res) {
             let u = await User.findByIdAndUpdate(req.body.id, {
                 profilePic: req.body.img,
             })
-            res.status(200).json({ success: "Success!" });
+            res.status(200).json( u );
         } 
         else {
             res.status(400).json({ error: "This method is not allowed!" });
         }
     } 
-//     else {
-//         res.status(400).json({ error: "Log into an account first!" });
-//     }
-// }
 
 export default handler;

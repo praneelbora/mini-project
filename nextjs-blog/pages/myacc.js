@@ -7,7 +7,6 @@ import main from '../styles/main.module.css'
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useSession, getSession, signOut, signIn, signUp } from 'next-auth/react';
-import { getToken } from 'next-auth/jwt';
 
 async function updateProfile(id,img) {
     const response = await fetch('/api/updateProfile', {
@@ -27,13 +26,14 @@ async function updateProfile(id,img) {
     return data;
   }
 
-export default function MyAcc(){
+export default function MyAcc({ users }){
+  const { data: session } = useSession();
+  var newUser;
     const [isLoading, setIsLoading] = useState(true);
     const [imageSrc, setImageSrc] = useState();
     const [uploadData, setUploadData] = useState();
     const router = useRouter();
     // check if logged in and redirect to login page if so
-    const { data: session } = useSession();
     useEffect(() => {
         getSession().then((sess) => {
             if(!sess){
@@ -79,17 +79,18 @@ export default function MyAcc(){
           method: 'POST',
           body: formData
         }).then(r => r.json());
-    
+
         setImageSrc(data.secure_url);
         setUploadData(data);
 
+
         try {
-            console.log(data)
+            // console.log(data)
             const result = await updateProfile(session?.user?._id, data.secure_url);
-            console.log(success);
-            //reloadSession();
+            console.log("success");
+            // reloadSession();
           } catch (error) {
-            console.log(error)
+            console.log("error")
           }
       }
     
@@ -99,7 +100,7 @@ export default function MyAcc(){
 
     return(
         <>
-            <Dashboard profileImg={session?.user?.profilePic}></Dashboard>
+        <Dashboard profileImg={session?.user?.profilePic}></Dashboard> 
             <div className={main.main}>
             <Image className={main.dp} src={session?.user?.profilePic} alt='Profile Image' width={500} height={500} style={{borderRadius:'50%'}}/>
                 {/* USER NAME & USERNAME -- BACKEND CONNECTION */}
@@ -113,7 +114,7 @@ export default function MyAcc(){
                     <button onClick={() => signOut()} className={main.sout}>Sign Out</button>
                 </div>
                 <form method="post" onChange={handleOnChange} onSubmit={handleOnSubmit} className={main.form}>
-                <label for="file" className="form-label">Change your profile Pic:</label>
+                <label className="form-label">Change your profile Pic:</label>
                 <input className="form-control" type="file" id="file" name='file' />
                 {imageSrc && !uploadData && (
                     <p>
@@ -122,7 +123,7 @@ export default function MyAcc(){
                 )}
 
                 {uploadData && (
-                    <code><pre>{JSON.stringify(uploadData, null, 2)}</pre></code>
+                    <p className='text-success'>Profile picture changed successfully!<br/>Please sign out and log in again to view changes.</p>
                 )}
                 </form>
             </div>

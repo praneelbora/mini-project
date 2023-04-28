@@ -28,6 +28,10 @@ export default function Home(){
             setBackgroundTransparency(100);
             setLinkColor('white');
         }
+        if (clientWindowHeight<10){
+          setBackgroundTransparency(0);
+          setLinkColor('black');
+        }
       }, [clientWindowHeight]);
     const { data: session } = useSession();
 
@@ -46,7 +50,7 @@ export default function Home(){
         </nav> */}
         <nav className= {`navbar navbar-expand-lg ${styles.navbar}`} style={{background: `rgb(53, 162, 78, ${backgroundTransparency})`}}>
           <div className="container-fluid">
-            <Link className="ms-3" href="/"><Image className={styles.logo} src={logo} alt='Logo'/></Link>
+            <Link className="ms-3" href="/"><Image className={styles.logo1} src={logo} alt='Logo'/></Link>
             
             {/* <div className='navbar-brand'></div> */}
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
