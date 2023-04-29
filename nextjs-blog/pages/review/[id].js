@@ -10,7 +10,7 @@ import { useState } from 'react';
 export async function getServerSideProps(context) {
   // const router = useRouter()
   const rid = context.query.id;
-  console.log(rid)
+  // console.log(rid)
   dbConnect();
   let review = await Review.findById(rid).populate('userId')
   //   return data;
@@ -48,7 +48,7 @@ export default function FReview({ review })
     return(
       <>
         <div style={{position:'fixed', right:'2vw', top:'2vh' }} onClick={()=>onClose()} onMouseEnter={()=>setCloseState('bi-x-square-fill text-success')} onMouseLeave={()=>setCloseState('bi-x-square')}>
-        <i class={`bi ${closeState}`} style={{fontSize:'50px'}}></i>
+        <i className={`bi ${closeState}`} style={{fontSize:'50px'}}></i>
               </div>
               <div className={css.box}>
        

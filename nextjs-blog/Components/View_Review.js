@@ -2,8 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.css';
 import view from './CSS/view.module.css';
-import Placeholder from '../public/Bg_1.png'
-import Head from 'next/head';
 import LinesEllipsis from 'react-lines-ellipsis'
 import { useSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
