@@ -51,7 +51,7 @@ export default NextAuth({
                     profilePic: user.profilePic,
                     username: user.username,
                     email: user.email,
-                    role: user.role,
+                    // role: user.role,
                 }
             }
             return token

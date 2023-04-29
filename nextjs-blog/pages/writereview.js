@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import Profile from '../public/Profile.png'
+import User from '../models/user';
+import dbConnect from '../utils/dbConnect';
 import Dashboard from '../Components/Dashboard';
 import write from '../styles/write.module.css'
 import TextareaAutosize from 'react-textarea-autosize';
@@ -7,6 +9,15 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useSession, getSession } from 'next-auth/react';
 import { useRef } from 'react';
+
+export async function getServerSideProps(context) {
+  dbConnect();
+  let sess = await getSession(context);
+  let user = await User.find({ _id: sess?.user?._id })
+  return {
+      props: {updatedUser: JSON.parse(JSON.stringify(user))}
+  }
+}
 
 async function newReview(id,title,img,desc,rating,country,city,hotel,date) {
   const response = await fetch('/api/addReview', {
@@ -26,7 +37,7 @@ async function newReview(id,title,img,desc,rating,country,city,hotel,date) {
   return data;
 }
 
-export default function WriteReview(){
+export default function WriteReview({ updatedUser }){
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [rating, setRating] = useState();
@@ -115,7 +126,7 @@ export default function WriteReview(){
 
     return(
         <>
-            <Dashboard profileImg={session?.user?.profilePic}></Dashboard>
+            <Dashboard profileImg={updatedUser[0].profilePic}></Dashboard>
             <h1 className={write.heading}>Write Review</h1>
             <form method='post' className={write.form} onSubmit={handleOnSubmit}>
           

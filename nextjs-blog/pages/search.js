@@ -1,6 +1,7 @@
 import Image from 'next/image'; 
 import Link from 'next/link';
 import Review from '../models/review';
+import User from '../models/user';
 import dbConnect from '../utils/dbConnect';
 import 'bootstrap/dist/css/bootstrap.css';
 import Profile from '../public/Profile.png'
@@ -13,14 +14,16 @@ import { useSession, getSession } from 'next-auth/react';
 
 export async function getServerSideProps(context) {
     dbConnect();
+    let sess = await getSession(context);
     let reviews = await Review.find().populate('userId')
+    let user = await User.find({ _id: sess?.user?._id })
     //   return data;
     return {
-        props: {reviews: JSON.parse(JSON.stringify(reviews))}
+        props: {reviews: JSON.parse(JSON.stringify(reviews)), updatedUser: JSON.parse(JSON.stringify(user))}
     }
 }
 
-export default function Search({reviews}){
+export default function Search({reviews,updatedUser}){
     const [isLoading, setIsLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('')
     const searchRef = useRef();
@@ -42,13 +45,13 @@ export default function Search({reviews}){
     }
 
     function handleOnChange(){
-        setSearchQuery(searchRef.current.value);
+        setSearchQuery(searchRef.current.value.toLowerCase());
     }
 
 
     const filteredReviews = reviews.filter((rev) => {
         return (
-            rev.title.split('/').some((part) => part.includes(`${searchQuery}`)) || rev.desc.split('/').some((part) => part.includes(`${searchQuery}`)) || rev.city.split('/').some((part) => part.includes(`${searchQuery}`)) || rev.country.split('/').some((part) => part.includes(`${searchQuery}`)) || rev.hotel.split('/').some((part) => part.includes(`${searchQuery}`)) || rev.userId.username.split('/').some((part) => part.includes(`${searchQuery}`)) 
+            rev.title.toLowerCase().split('/').some((part) => part.includes(`${searchQuery}`)) || rev.desc.toLowerCase().split('/').some((part) => part.includes(`${searchQuery}`)) || rev.city.toLowerCase().split('/').some((part) => part.includes(`${searchQuery}`)) || rev.country.toLowerCase().split('/').some((part) => part.includes(`${searchQuery}`)) || rev.hotel.toLowerCase().split('/').some((part) => part.includes(`${searchQuery}`)) || rev.userId.username.toLowerCase().split('/').some((part) => part.includes(`${searchQuery}`)) 
         )
       });
 
@@ -56,7 +59,7 @@ export default function Search({reviews}){
 
     return(
         <>
-            <Dashboard profileImg={session?.user?.profilePic}/>
+            <Dashboard profileImg={updatedUser[0].profilePic}/>
             <h1 className={main.heading}>All Reviews:</h1>
             <div className={main.main1}>
             <div className='form mb-5' style={{'width':'60vw'}}>

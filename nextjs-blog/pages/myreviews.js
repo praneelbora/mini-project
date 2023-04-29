@@ -1,6 +1,7 @@
 import Image from 'next/image'; 
 import Link from 'next/link';
 import Review from '../models/review';
+import User from '../models/user';
 import dbConnect from '../utils/dbConnect';
 import 'bootstrap/dist/css/bootstrap.css';
 import Profile from '../public/Profile.png'
@@ -27,14 +28,17 @@ import { useSession, getSession } from 'next-auth/react';
 
 export async function getServerSideProps(context) {
     dbConnect();
-    let reviews = await Review.find().populate('userId')
+    let sess = await getSession(context);
+    // console.log(sess)
+    let reviews = await Review.find({ userId: sess?.user?._id }).populate('userId')
+    let user = await User.find({ _id: sess?.user?._id })
     //   return data;
     return {
-        props: {reviews: JSON.parse(JSON.stringify(reviews))}
+        props: {reviews: JSON.parse(JSON.stringify(reviews)), updatedUser: JSON.parse(JSON.stringify(user))}
     }
 }
 
-export default function MyReviews({reviews}){
+export default function MyReviews({reviews, updatedUser}){
     const [isLoading, setIsLoading] = useState(true);
     // check if logged in and redirect to login page if so
     const { data: session } = useSession();
@@ -57,15 +61,15 @@ export default function MyReviews({reviews}){
 
     return(
         <>
-            <Dashboard profileImg={session?.user?.profilePic}/>
+            <Dashboard profileImg={updatedUser[0].profilePic}/>
             <h1 className={main.heading}>Previous Reviews:</h1>
             <div className={main.main1}>
             <div className="row my-1">
             {reviews.sort((a, b) => a.createdAt < b.createdAt ? 1 : -1).map((review) => {
-                if (review.userId._id===newId){
+                // if (review.userId._id===newId){
                 return(
                 <VReview key={review._id} rid={review._id} dashImg={review.dashImg} title={review.title} reviewer={review.userId.username} desc={review.desc} rating={review.rating} eagleScore={review.eagleScore} country={review.country} city={review.city} upvotes={review.upvotes.length} upvoted={review.upvotes.includes(newId)} createdAt={review.createdAt} />
-            )}})}
+            )})}
                 
                 </div>
             </div>
