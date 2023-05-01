@@ -38,6 +38,14 @@ export default function VReview({ rid, dashImg, title, reviewer, desc, rating, e
     hour: "numeric",
     minute: "2-digit"
   });
+  var sentiment;
+  if (eagleScore.charAt(0)=='-'){
+      sentiment = 'red';
+  } else if (eagleScore.charAt(0)=='9'){
+    sentiment = 'lime';
+  } else {
+    sentiment = 'yellow';
+  }
 
   async function handleLikeUnlike(){
     try {
@@ -66,7 +74,7 @@ export default function VReview({ rid, dashImg, title, reviewer, desc, rating, e
                       {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
                     </div>
                     <ul className="list-group list-group-flush">
-                      <li className="list-group-item"><b>Rating:</b> {rating}{/*<i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star"></i> <i className="bi bi-star"></i>*/}<span style={{'float':'right'}}><b>EagleScore:</b> {eagleScore}{/*<i className="bi bi-8-circle-fill"></i>*/}</span></li>
+                      <li className="list-group-item"><b>Rating:</b> {rating}{/*<i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star"></i> <i className="bi bi-star"></i>*/}<span style={{'float':'right'}}><b>EagleScore:</b> <span style={{'padding':'3px','borderRadius':'10px','backgroundColor': `${sentiment}`}}> {eagleScore} </span>{/*<i className="bi bi-8-circle-fill"></i>*/}</span></li>
                       <li className="list-group-item"><b>Country:</b> {country} <span style={{'float':'right'}}><b>City:</b> {city}</span></li>
                       <li className="list-group-item">
                         <Link href={`/review/${rid}`} className="card-link btn btn-primary" target="_blank">Read Full Review</Link>
