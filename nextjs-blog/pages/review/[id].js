@@ -57,7 +57,7 @@ export default function FReview({ review })
          {/* <Image src={dashImg} alt="Img" className={css.i}></Image> */}
          {/* <br/> */}
          <br/>
-         <hr/>
+         <hr style={{borderColor: '#35A24E' , opacity:'0.8'}}/>
          <br/>
          <p className="" > <span style={{float: 'left',marginLeft:'1vw'}}><b>Username: </b>@{review.userId.username}</span><span style={{float: 'right',marginRight:'1vw'}}><b>Posted At: </b>{createdate}</span> </p>
          {/* <p className="mt-2" > <span style={{float: 'left',marginLeft:'2vw'}}><b>Username: </b>{reviewer}</span><span style={{float: 'right',marginRight:'2vw'}}><b>Date: </b>{date}</span> </p> */}
@@ -71,7 +71,7 @@ export default function FReview({ review })
          {/* <p className='mt-2' style={{float: 'left',marginLeft:'1vw'}}><b>Place: </b>{review.hotel}, {review.city}, {review.country}</p> */}
          <br/>
          {/* <br/> */}
-         <hr/>
+         <hr style={{borderColor: '#35A24E' , opacity:'0.8'}}/>
 
          <br/>
          <p>{review.desc}</p>

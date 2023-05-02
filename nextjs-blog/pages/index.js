@@ -38,21 +38,11 @@ export default function Home(){
 
     return (
       <div className={styles.upperbody}>
-        {/* NAVBAR  */}
-        {/* <nav className={styles.navbar} id="navbar">
-          <Image className={styles.logo} src={logo} alt="Logo" />
-          <ul className={styles.ull} style={{listStyleType: 'none'}}>
-            <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}><a href="#browse" style={{color: 'inherit', fontStyle: 'normal', textDecoration: 'none'}}>Browse</a></li>
-            <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}>About Us</li>
-            <li className={`${styles.nav1} ${styles.nav2}`} style={{color: 'white'}}>Contact</li>
-            {!session?<li className={styles.nav1}><span><Link href="/newlogin" target='_blank' className={styles.nav3}>Log In</Link></span> | <span className={styles.nav3}><Link href="/newsignup" target='_blank' className={styles.nav3}>Sign Up</Link></span> </li>:<li className={styles.nav1}><span>Hi</span> <Link href={'/myacc'} className={styles.nav2}>{session.user.username}</Link> | <Link href={'/'} onClick={() => signOut()} className={styles.nav3}>Sign Out</Link></li>}
-          </ul>
-        </nav> */}
+       
         <nav className= {`navbar navbar-expand-lg ${styles.navbar}`} style={{background: `rgb(53, 162, 78, ${backgroundTransparency})`}}>
           <div className="container-fluid">
             <Link className="ms-3" href="/"><Image className={styles.logo1} src={logo} alt='Logo'/></Link>
             
-            {/* <div className='navbar-brand'></div> */}
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -81,19 +71,7 @@ export default function Home(){
                   <Link className="nav-link active" aria-current="page" href={'/'} onClick={() => signOut()}>Sign Out</Link>                  
                 </li></>}
                 
-                
 
-                {/* <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="#">Action</a></li>
-                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                    <li><hr className="dropdown-divider"/></li>
-                    <li><a className="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li> */}
                 
               </ul>
               
@@ -104,7 +82,7 @@ export default function Home(){
 
         {/* HERO SECTION  */}
         <section className={styles.hero}>
-          <div className={styles.lorem}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolore adipisci ullam sequi aperiam perferendis quas, quaerat aspernatur architecto, molestias numquam cum perspiciatis esse excepturi vitae aliquid odio doloribus nihil.</div>
+          <div className={styles.lorem}>THE travel website,<br/> for the travelers,<br/> by the travelers!</div>
           <Image className={styles.el1} src={el1} alt="Ellipse1" />
           <Image className={styles.el2} src={el2} alt="Ellipse2" />
           <Image className={styles.el3} src={el3} alt="Ellipse3" />
@@ -113,16 +91,7 @@ export default function Home(){
         <section className={styles.search} id="browse">
           <input className={styles.searchbar} type="text" placeholder="Hotels, Places, Landmarks etc" />
         </section>
-        {/* <section className="contact">
-        <h1 style="margin-left: 0;">Contact Us</h1>
-        <p style="padding-top: 1%;">abc@gmail.com</p>
-        <p style="padding-top: 1%;">1234567890</p>
-        <p style="padding-top: 1%;">B203, Bhaskaracharya building,</p>
-        <p>K J Somaiya College of Engineering,</p>
-        <p>Somaiya Vidyaviahar University,</p>
-        <p>Vidyavihar East, Mumbai</p>
-        <p>Maharashtra - 400077.</p>
-    </section> */}
+        
     <style jsx global>{`
     html, body {
       overflow-x: hidden;

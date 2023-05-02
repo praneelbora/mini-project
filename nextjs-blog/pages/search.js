@@ -91,7 +91,7 @@ export default function Search({reviews,updatedUser}){
                 return(
                 <VReview key={review._id} rid={review._id} dashImg={review.dashImg} title={review.title} reviewer={review.userId.username} desc={review.desc} rating={review.rating} eagleScore={review.eagleScore} country={review.country} city={review.city} upvotes={review.upvotes.length} upvoted={review.upvotes.includes(newId)} createdAt={review.createdAt} />
             )})):
-            (filteredReviews.sort((a, b) => a.upvotes < b.upvotes ? 1 : -1).map((review) => {
+            (filteredReviews.sort((a, b) => a.upvotes.length < b.upvotes.length ? 1 : -1).map((review) => {
                 return(
                 <VReview key={review._id} rid={review._id} dashImg={review.dashImg} title={review.title} reviewer={review.userId.username} desc={review.desc} rating={review.rating} eagleScore={review.eagleScore} country={review.country} city={review.city} upvotes={review.upvotes.length} upvoted={review.upvotes.includes(newId)} createdAt={review.createdAt} />
             )}))}
