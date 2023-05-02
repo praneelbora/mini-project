@@ -88,13 +88,13 @@ export default function Home(){
           <Image className={styles.el3} src={el3} alt="Ellipse3" />
         </section>
         {/* SEARCH SECTION  */}
-        <section className={styles.search} id="browse">
+        {/* <section className={styles.search} id="browse">
           <input className={styles.searchbar} type="text" placeholder="Hotels, Places, Landmarks etc" />
-        </section>
+        </section> */}
         
     <style jsx global>{`
     html, body {
-      overflow-x: hidden;
+      overflow: hidden;
       position: relative;
     }
     `}</style>
