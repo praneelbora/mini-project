@@ -59,7 +59,7 @@ export default function Home(){
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className={`${styles.ull} navbar-nav ms-auto mb-2 mb-lg-0 me-3`}>
                 <li className="nav-item mx-2">
-                  <Link className="nav-link active" aria-current="page" href="#">Browse</Link>
+                  <Link className="nav-link active" aria-current="page" href="/opensearch">Browse</Link>
                 </li>
                 <li className="nav-item mx-2 ">
                   <Link className="nav-link active" aria-current="page" href="#">About Us</Link>
