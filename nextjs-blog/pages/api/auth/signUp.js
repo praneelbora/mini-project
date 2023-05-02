@@ -9,7 +9,7 @@ async function createUser(req, res) {
 
   const data = req.body;
 
-  const { fname, username, email, password } = data;
+  // const { fname, username, email, password } = data;
 
   dbConnect();
 
