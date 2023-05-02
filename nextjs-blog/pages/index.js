@@ -51,11 +51,12 @@ export default function Home(){
                 <li className="nav-item mx-2">
                   <Link className="nav-link active" aria-current="page" href="/opensearch">Browse</Link>
                 </li>
-                <li className="nav-item mx-2 ">
+                {/* <li className="nav-item mx-2 ">
                   <Link className="nav-link active" aria-current="page" href="#">About Us</Link>
-                </li>
+                </li> */}
                 <li className="nav-item mx-2">
-                  <Link className="nav-link active" aria-current="page" href="#">Contact</Link>
+                  <Link className="nav-link active" aria-current="page" href="mailto:praneel.bora@somaiya.edu">Contact</Link>
+                  
                 </li>
                 {!session?<>
                 <li className="nav-item mx-2">
