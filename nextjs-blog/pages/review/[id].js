@@ -28,16 +28,13 @@ export default function FReview({ review })
     day: "numeric",
     month: "short",
     year: "numeric",
-    hour: "numeric",
-    minute: "2-digit"
+
   });
 
   const traveldate = new Date(review.traveledAt).toLocaleString("en-GB", {
     day: "numeric",
     month: "short",
     year: "numeric",
-    hour: "numeric",
-    minute: "2-digit"
   });
 
     async function onClose()
@@ -58,15 +55,24 @@ export default function FReview({ review })
          {/* <br/> */}
          <Image src={review.dashImg} alt="Img" className={css.i} width={500} height={500}></Image>
          {/* <Image src={dashImg} alt="Img" className={css.i}></Image> */}
-         <p className="mt-2" > <span style={{float: 'left',marginLeft:'2vw'}}><b>Username: </b>@{review.userId.username}</span><span style={{float: 'right',marginRight:'2vw'}}><b>Date: </b>{review.travelDate}</span> </p>
+         {/* <br/> */}
+         <br/>
+         <hr/>
+         <br/>
+         <p className="" > <span style={{float: 'left',marginLeft:'1vw'}}><b>Username: </b>@{review.userId.username}</span><span style={{float: 'right',marginRight:'1vw'}}><b>Posted At: </b>{createdate}</span> </p>
          {/* <p className="mt-2" > <span style={{float: 'left',marginLeft:'2vw'}}><b>Username: </b>{reviewer}</span><span style={{float: 'right',marginRight:'2vw'}}><b>Date: </b>{date}</span> </p> */}
          <br/>
-         <p className="mt-2" > <span style={{float: 'left',marginLeft:'2vw'}}><b>Rating: </b>{review.rating}</span><span style={{float: 'right',marginRight:'2vw'}}><b>EagleScore: </b>{review.eagleScore}</span> </p>
+         <p className="" > <span style={{float: 'left',marginLeft:'1vw'}}><b>Rating: </b>{review.rating}</span><span style={{float: 'right',marginRight:'1vw'}}><b>Date of Travel: </b>{traveldate}</span> </p>
          {/* <p className="mt-2" > <span style={{float: 'left',marginLeft:'2vw'}}><b>Rating: </b>{rating}</span><span style={{float: 'right',marginRight:'2vw'}}><b>EagleScore: </b> {eagleScore}</span> </p> */}
          <br/>
+         <p className="" > <span style={{float: 'left',marginLeft:'1vw'}}><b>Place: </b>{review.hotel}, {review.city}, {review.country}</span><span style={{float: 'right',marginRight:'1vw'}}><b>EagleScore: </b>{review.eagleScore}</span> </p>
+
          {/* <p className='mt-2' style={{float: 'left',marginLeft:'2vw'}}><b>Place: </b>{Hotel}, {city}, {country}</p> */}
-         <p className='mt-2' style={{float: 'left',marginLeft:'2vw'}}><b>Place: </b>{review.hotel}, {review.city}, {review.country}</p>
+         {/* <p className='mt-2' style={{float: 'left',marginLeft:'1vw'}}><b>Place: </b>{review.hotel}, {review.city}, {review.country}</p> */}
          <br/>
+         {/* <br/> */}
+         <hr/>
+
          <br/>
          <p>{review.desc}</p>
        </div>
