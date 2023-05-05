@@ -78,18 +78,18 @@ export default function OpenSearch({reviews}){
                 <li className="nav-item mx-2">
                   <Link className="nav-link active" aria-current="page" href="/opensearch">Browse</Link>
                 </li>
-                <li className="nav-item mx-2 ">
+                {/* <li className="nav-item mx-2 ">
                   <Link className="nav-link active" aria-current="page" href="#">About Us</Link>
-                </li>
+                </li> */}
                 <li className="nav-item mx-2">
-                  <Link className="nav-link active" aria-current="page" href="#">Contact</Link>
+                  <Link className="nav-link active" aria-current="page" href="mailto:praneel.bora@somaiya.edu">Contact</Link>
                 </li>
                 {!session?<>
                 <li className="nav-item mx-2">
-                  <Link className="nav-link active" aria-current="page" href="/newlogin" target='_blank'>Log In</Link>                  
+                  <Link className="nav-link active" aria-current="page" href="/newlogin">Log In</Link>                  
                 </li> 
                 <li className="nav-item mx-2">
-                  <Link className="nav-link active" aria-current="page" href="/newsignup"target='_blank'>Sign Up</Link>                  
+                  <Link className="nav-link active" aria-current="page" href="/newsignup">Sign Up</Link>                  
                 </li></>:<>
                 <li className="nav-item mx-2">
                   <Link className="nav-link active" aria-current="page" href="/myacc">Hi {session?.user?.username}</Link>                  

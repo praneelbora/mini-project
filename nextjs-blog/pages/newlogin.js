@@ -21,7 +21,7 @@ function LogInForm() {
   useEffect(() => {
     getSession().then((session) => {
       if (session) {
-        window.close();
+        router.back()
       } else {
         setIsLoading(false);
       }

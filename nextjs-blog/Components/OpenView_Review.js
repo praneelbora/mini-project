@@ -84,9 +84,9 @@ export default function OpenVReview({ rid, dashImg, title, reviewer, desc, ratin
                       <li className="list-group-item"><b>Rating:</b> {rating}{/*<i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star"></i> <i className="bi bi-star"></i>*/}<span style={{'float':'right'}}><b>EagleScore:</b> <span style={{'padding':'3px','borderRadius':'10px','backgroundColor': `${sentiment}`}}> {eagleScore} </span>{/*<i className="bi bi-8-circle-fill"></i>*/}</span></li>
                       <li className="list-group-item"><b>Country:</b> {country} <span style={{'float':'right'}}><b>City:</b> {city}</span></li>
                       <li className="list-group-item">
-                        <Link href={`/review/${rid}`} className="card-link btn btn-primary" target="_blank">Read Full Review</Link>
+                        <Link href={`/review/${rid}`} className="card-link btn btn-primary">Read Full Review</Link>
                         {/* {console.log(likeState,upvoted)} */}
-                        <button onClick={()=>handleOnClick()} className="card-link btn btn-outline-success mb-n1" style={{'float':'right'}}><span>{upvotes}</span>&nbsp;&nbsp;<i className="bi bi-hand-thumbs-up"></i></button>
+                        <button onClick={()=>router.push('/newlogin')} className="card-link btn btn-outline-success mb-n1" style={{'float':'right'}}><span>{upvotes}</span>&nbsp;&nbsp;<i className="bi bi-hand-thumbs-up"></i></button>
                       </li>
                     </ul>
                     <div className="card-footer" height={10}>

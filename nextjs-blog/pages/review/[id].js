@@ -22,6 +22,7 @@ export async function getServerSideProps(context) {
 
 export default function FReview({ review })
 {   
+  const router = useRouter();
   const [closeState,setCloseState] = useState('bi-x-square text-success');
   // const newdate = createdAt
   const createdate = new Date(review.createdAt).toLocaleString("en-GB", {
@@ -39,7 +40,7 @@ export default function FReview({ review })
 
     async function onClose()
     {
-      window.close();
+      router.back();
     }
   
     return(

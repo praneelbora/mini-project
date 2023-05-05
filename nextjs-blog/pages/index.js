@@ -60,16 +60,16 @@ export default function Home(){
                 </li>
                 {!session?<>
                 <li className="nav-item mx-2">
-                  <Link className="nav-link active" aria-current="page" href="/newlogin" target='_blank'>Log In</Link>                  
+                  <Link className="nav-link active" aria-current="page" href="/newlogin">Log In</Link>                  
                 </li> 
                 <li className="nav-item mx-2">
-                  <Link className="nav-link active" aria-current="page" href="/newsignup"target='_blank'>Sign Up</Link>                  
+                  <Link className="nav-link active" aria-current="page" href="/newsignup">Sign Up</Link>                  
                 </li></>:<>
                 <li className="nav-item mx-2">
                   <Link className="nav-link active" aria-current="page" href="/myacc">Hi {session?.user?.username}</Link>                  
                 </li> 
                 <li className="nav-item mx-2">
-                  <Link className="nav-link active" aria-current="page" href={'/'} onClick={() => signOut()}>Sign Out</Link>                  
+                  <Link className="nav-link active" aria-current="page" href='/' onClick={() => signOut()}>Sign Out</Link>                  
                 </li></>}
                 
 
