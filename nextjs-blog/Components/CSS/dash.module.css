@@ -1,24 +1,36 @@
-.navbar{
-    top: 0;
-    position: fixed;
-    width: 100vw;
-    min-height: 80px;
-    height: 13vh;
-    z-index: 10;
-    transition: 500ms;
-    background-color: #35A24E;
+/* * {
+    
+    
+} */
+
+.upperbody{
+    overflow-x: hidden;
+    margin: 0%;
+    padding: 0%;
 }
 .ull{
-
-    position: relative;
-    display: inline;
-    float: right;
-    top: 55%;
-    width: 60%;
-    text-align: right;
-    transform: translateY(-50%);
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: 0.35s;
+    cursor:pointer;   
 }
-.nav{
+.ull li:hover{
+    filter: invert();
+    transition: 400ms;
+}
+.user{
+    text-decoration: none;
+    color: rgb(126, 126, 126);
+    font-weight: bolder;
+    cursor: pointer;
+}
+.user:hover{
+    filter: invert();
+    text-decoration: underline;
+    transition: 0.5s;
+}
+.nav1{
     display: inline;
     /* padding-left: 5%; */
     padding-right: 9%;
@@ -31,30 +43,198 @@
     /* float; */
 }
 
+.nav2:hover{
+    filter: invert();
+}
 .nav3{
     text-decoration: none;
-    color: whitesmoke;
 }
-.nav3:hover{
+.nav3{
+    transition: 0.25s;
+}
+.nav3:visited{
     color: black;
-    transition: 0.35s;
 }
-.profile{
-    width: 8vh;
-    height: 8vh;
-    margin-top: -1.5vh;
-    margin-right: 3vw;
+
+.nav3:hover{
+    color: #FF5C00;
 }
-.logo{
-    height: 90%;
-    top: 5%;
+.logo1{
+    height: 10vh;
+    top: 10%;
     width: auto;
     margin-left: 4.5%;
     transition: 0.4s;
 }
-.logo:hover{
+/* .logo:hover{
     height: 94%;
-    top: 3%;
+    top:3%;
     width: auto;
     margin-left: 4%;
+} */
+
+.navbar{
+    position: fixed;
+    width: 100vw !important;
+    z-index: 10;
+    transition: 500ms ;
 }
+/* .navbarbg {
+    position: fixed;
+    width: 100vw;
+    height: 13vh;
+    z-index: 10;
+    transition: 500ms ;
+    background-color: #35A24E;
+} */
+
+.hero {
+    background-color:#35A24E;
+    width: 100vw;
+    height: 100vh;
+}
+.el1{
+    position: absolute;
+    width: 22.5vw;
+    height: 20vh;
+    right: 0;
+    z-index: 4;
+}
+.el2{
+    position: absolute;
+    width: 42.5vw;
+    height: 20vh;
+    right: 16vw;
+    z-index: 5;
+}
+
+.el3{
+    position: absolute;
+    margin-left: 55%;
+    height: 120vh;
+    width: 100vh;
+    z-index: 3;
+    
+}
+.lorem{
+    position: absolute;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    width: 40vw;
+    margin-left: 5vw;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ffff;
+}
+@media only screen and (max-width: 840px) {
+    .logo1{
+        height: 8vh;
+    }
+    .el1 {
+        width: 150%;
+        height: 20%;
+        left: 0;
+        transform:rotateY(180deg)
+    }
+    .el2{
+        display: none;
+    }
+    .el3{
+        display: none;
+    }
+    .lorem{
+        margin-top: 70vh;
+        width: 90vw;
+        z-index: 5;
+    }
+  }
+
+@media only screen and (max-width: 500px) {
+    .logo1{
+        height: 8vh;
+    }
+    .lorem{
+        font-weight: normal;
+        font-size: 1.5rem;
+    }
+  }
+
+  
+
+/* .search {
+    position: relative;
+    background-color:#5DCA8F;
+    background-image: url('../public/Bg_1.png');
+    background-size: 100vw 100vh;
+    
+    background-size: 100vw 100vh;
+    width: 100vw;
+    height: 100vh; 
+    z-index: 6;
+    
+} */
+.searchbar{
+    width: 60vw;
+    margin-top: 56vh;
+    margin-left: 20vw;
+    height: 6vh;
+    border-radius: 3vh;
+    border: none;
+    text-align: center;
+    z-index: 4;
+    font-weight: bold;
+    color: #5DCA8F;
+    font-size: large;
+}
+.searchbar::placeholder {
+    opacity: 0.6;
+    font-weight: bold;
+    color: #5DCA8F;
+    font-size: large;
+}
+.searchbar:focus::placeholder {
+    opacity: 0;
+}
+.searchbar::target-text {
+    color: #5DCA8F;
+}
+.searchbar:focus {
+    border: none;
+    outline: none;
+    font-weight: bold;
+    color: #28380A;
+    font-size: large;
+}
+.contact{
+    background-color: #5DCA8F;
+    width: 100vw;
+    height: 30vh;
+    text-align: center;
+}
+/* h1{
+    padding-top: 1%;
+    text-align: center;
+} */
+
+
+
+.profile{
+    width: 7vh;
+    height: 7vh;
+}
+.profile1{
+    width: 7vh;
+    height: 7vh;
+    margin-right:2vw;
+}
+.navbar-toggler-icon {
+    padding: 0;
+    border-radius: 100%;
+}
+@media only screen and (max-width: 991.5px) {
+    .profile1{
+        display: none;
+        height: 0;
+        width: 0;
+    }
+  }

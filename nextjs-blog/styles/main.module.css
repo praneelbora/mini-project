@@ -9,7 +9,6 @@
 .main1{
     position: relative;
     justify-self: center;
-    margin-top: 100px;
     width: 90%;
     left: 5%;
     top: 7.5vh;
@@ -19,9 +18,8 @@
     justify-content: center;
 }
 .heading{
-    position: relative;
-    top: 17vh;
-    font-size: 3em;
+    margin-top: 17vh;
+    font-size: 2.5em;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     text-align: center;
@@ -57,4 +55,8 @@
     max-width: 40vw;
     margin: 30px auto;
     text-align: center;
+}
+.form-control{
+    width: 60vw;
+    min-width: 300px;
 }

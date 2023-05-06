@@ -66,10 +66,10 @@ export default function Search({reviews,updatedUser}){
             <Dashboard profileImg={updatedUser[0].profilePic}/>
             <h1 className={main.heading}>All Reviews:</h1>
             <div className={main.main1}>
-            <div className='form mb-5' style={{'width':'60vw'}}>
+            <div className='form mb-5' style={{'width':'80vw'}}>
                 {/* <label for="search" className="form-label">Search:</label> */}
                 <input className="form-control" type="text" id="search" name='search' ref={searchRef} onChange={handleOnChange} placeholder='Search through thousands of reviews...'/><br />
-                <div style={{'marginLeft':'35vw','transform':'translateX(-50%)'}}>Sort according to: <select value={sortFilter} onChange={handleDropdown}>
+                <div style={{transform:'translateX(0vw)', textAlign: 'center'}}>Sort according to: <select value={sortFilter} onChange={handleDropdown}>
                     <option value='createdAt'>Review Date</option>
                     <option value='rating'>Rating</option>
                     <option value='eagleScore'>eagleScore</option>
