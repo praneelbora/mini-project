@@ -51,7 +51,7 @@ function LogInForm() {
           <span className={styles.primarybox}>
             <div className={styles.form}>
               <h2 style={{textAlign: 'center'}}>Log In</h2>
-              <div className={styles.form} />
+              {/* <div className={styles.form} /> */}
               <div className={styles.inner}>
                 <form onSubmit={submitHandler}>
                   {/* USERNAME */}
@@ -73,7 +73,8 @@ function LogInForm() {
                   </div>
                   {/* SIGNUP BUTTON  */}
                   <div style={{width: '100%', textAlign: 'center'}}><Link className={styles.next} href="/newsignup">New? Sign Up here</Link>
-                  </div></form>
+                  </div>
+                </form>
               </div>  
             </div>
           </span>

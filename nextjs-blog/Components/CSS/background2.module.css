@@ -1,21 +1,30 @@
 .box{
     position: absolute;
     height: 100vh;
-    background-color: #5DCA8F;
-    width: 34vw;
-    margin-left: 66vw;
+    /* background-color: #5DCA8F; */
+    width: 500px;
+    right: -20px;
+    z-index: 3;
 }
 
 .logo{
     position: absolute;
-    margin-top: 5%;
-    width: 70%;
-    margin-left: 15%;
+    margin-top: 4%;
+    width: 200px;
+    height: auto;
+    right: 150px;
+    /* transform: translateX(-50%); */
     transition: 0.4s;
+    z-index: 10;
 }
-.logo:hover{
-    margin-left: 13%;
-    width: 74%;
+@media only screen and (max-width:500px) {
+    .logo{
+        margin: 0;
+        margin-top: 5%;
+        right: calc((100vw - 200px) / 2);
+        transform: none;
+        padding: 0;
+    }
 }
 .bg2{
     position: absolute;

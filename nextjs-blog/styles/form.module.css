@@ -1,15 +1,30 @@
 .primarybox{
-    background-color: white;
+    background-color: transparent;
     height: 100vh;
     padding-left: 22vw;
     padding-top: 15vh;
     position: absolute;
     width: 66vw;
+    z-index: 50;
 }
 .inner{
     margin-top: 10vh;
     width: 100%;
 }
-.form{width: 50%;}
+.form{
+    width: 50%;
+    min-width: 300px;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 20px;
+    padding: 20px;
+}
 .next{font-size: x-small; color: black;}
 .next:hover{color: blue;}
+
+
+@media only screen and (max-width:500px) {
+    .primarybox{
+        margin-left: calc((100vw - 300px) / 2);
+        padding-left: 0;
+    }
+}

@@ -6,9 +6,9 @@ import logo from '../public/logo.png'
 export default function Background2(){
     return(
         <>
+        <Link href="/"><Image className={styles.logo} src={logo} alt="Logo"/></Link>
         <span className={styles.box}>
             <Image className={styles.bg2} src={Bg_2} alt="Background Image"/>
-            <Link href="/"><Image className={styles.logo} src={logo} alt="Logo"/></Link>
           </span>
         </>
     );
