@@ -9,13 +9,14 @@
 
 .logo{
     position: absolute;
-    margin-top: 4%;
+    margin-top: 2%;
     width: 200px;
     height: auto;
     right: 150px;
     /* transform: translateX(-50%); */
     transition: 0.4s;
     z-index: 10;
+    cursor: pointer;
 }
 @media only screen and (max-width:500px) {
     .logo{
@@ -24,6 +25,9 @@
         right: calc((100vw - 200px) / 2);
         transform: none;
         padding: 0;
+    }
+    .bg2 {
+        overflow: hidden;
     }
 }
 .bg2{

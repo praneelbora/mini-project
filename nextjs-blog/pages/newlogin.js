@@ -35,7 +35,7 @@ function LogInForm() {
   async function submitHandler(event) {
     event.preventDefault();
 
-    const enteredUsername = usernameInputRef.current.value;
+    const enteredUsername = usernameInputRef.current.value.trimEnd();
     const enteredPassword = passwordInputRef.current.value;
 
     // optional: Add validation here

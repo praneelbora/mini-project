@@ -1,3 +1,7 @@
+.body{
+    overflow: hidden;
+    height: 80vh;
+}
 .primarybox{
     background-color: transparent;
     height: 100vh;
